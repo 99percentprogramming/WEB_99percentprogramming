@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>
+		Pre-registration
+	</title>
+
+	<style>
+
+		/* Styling the Body element i.e. Color,
+		Font, Alignment */
+		body {
+			font-family: Arial black, sans-serif;
+			text-align: center;
+			margin: 0;
+    		padding: 0;
+		}
+		nav {
+		    display: flex;
+		    flex-wrap: wrap;
+		    align-items: center;
+		    background-color: rgb(3, 56, 56, 0.4);
+		    justify-content: space-between;
+		    overflow: auto;
+		    padding: 10px;
+		    font-size: 20px;
+		}
+		nav ul {
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+		}
+		nav li {
+		    display: inline;
+		    margin-right: 30px;
+		}
+		nav a {
+		    text-decoration: none;
+		    color: #fff;
+		}
+		#page_container {
+    		position: relative;
+    		min-height: 100%;
+    	}
+		#content_picture_background {
+    		background-image: url("background_picture_try2.JPG");
+    		background-size: cover;
+		}
+
+		/* Styling the Form (Color, Padding, Shadow) */
+		form {
+			background-color: #000;
+			color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		/* Styling form-control Label */
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input,
+		select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		/* Styling form-control Radio
+		button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+		/* Styling Button */
+		button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		footer {
+		    position: relative;
+		    bottom: 0;
+		    width: 98.7%;
+		    height: 2.5rem;
+		    background-color: #333;
+		    color: #fff;
+		    text-align: center;
+		    padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="page_container">
+    	<div id=content_picture_background>
+	    <nav>
+	        <img src="logo_99percent.PNG" width="120px" height="80px" id=logo alt="Logo image" style="margin-left: 125px;" />
+	        <ul>
+	            <li><a href="./index.html">Home</a></li>
+	            <li><a href="./training_programs.html">Training Programs</a></li>
+	            <li><a href="./about_us.html">About us</a></li>
+	            <li><a href="./contact.html">FAQ & Contact</a></li>
+	        </ul>
+	    </nav>
+
+		<!-- Create Form -->
+		<form id="form" method="post" action="/99PercentProgramming_WEB/PreRegistration_handler.php">
+			<h1>Pre-Registration</h1>
+			<!-- Details -->
+			<div class="form-control">
+				<label for="name" id="label-name">
+					Name
+				</label>
+
+				<!-- Input Type Text -->
+				<input type="text"
+					id="name" name="name" required 
+					placeholder="Enter your name" />
+				<span class="error"><?php echo $nameErr;?></span>
+			</div>
+
+			<div class="form-control">
+				<label for="email" id="label-email">
+					Email
+				</label>
+
+				<!-- Input Type Email-->
+				<input type="email"
+					id="email" name="email" required
+					placeholder="Enter your email" />
+				<span class="error"><?php echo $emailErr;?></span>
+			</div>
+
+			<div class="form-control">
+				<label for="role" id="label-role">
+					Which option best fits you?
+				</label>
+				
+				<!-- Dropdown options -->
+				<select name="role" id="role" name="role">
+					<option value="general">General Programming</option>
+					<option value="no_equipment">No Equipment Programming</option>
+					<option value="other">Other</option>
+				</select>
+				<span class="error"><?php echo $roleErr;?></span>
+			</div>
+
+			<div class="form-control">
+				<label>What are your fitness goals?
+					<small>(Check all that apply)</small>
+				</label>
+				<!-- Input Type Checkbox -->
+				<label for="inp-1">
+					<input type="checkbox"
+						name="goals">Getting healthy</input></label>
+				<label for="inp-2">
+					<input type="checkbox"
+						name="goals">Getting ready for The Open</input></label>
+				<label for="inp-3">
+					<input type="checkbox"
+						name="goals">Improve in Gymnastics</input></label>
+				<label for="inp-4">
+					<input type="checkbox"
+						name="goals">Improve in Weightlifting</input></label>
+				<label for="inp-5">
+					<input type="checkbox"
+						name="goals">Improve in Endurance</input></label>
+				<label for="inp-6">
+					<input type="checkbox"
+						name="goals">Others</input></label>
+				<span class="error"><?php echo $goalsErr;?></span>
+			</div>
+
+			<div class="form-control">
+				<label for="comment">
+					Any comments or suggestions
+				</label>
+
+				<!-- multi-line text input control -->
+				<textarea name="comment" id="comment" maxlength="250" 
+					placeholder="Enter your comment here">
+				</textarea>
+			</div>
+
+			<!-- Multi-line Text Input Control -->
+			<button type="submit" value="submit">
+				Submit
+			</button>
+		</form>
+		</div>
+
+		<footer>
+	        <p>&copy; 2023 Created by 99PercentProgramming</p>
+	    </footer>
+		
+	</div>
+</body>
+</html>
