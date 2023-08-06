@@ -1,0 +1,104 @@
+body {
+    font-family: Arial black, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#page_container {
+    position: relative;
+    min-height: 100vh;
+}
+#content_picture_background {
+    background-image: url("background_picture_try2.JPG");
+    background-size: cover;
+}
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgb(3, 56, 56, 0.4);
+    justify-content: space-between;
+    overflow: auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+section {
+    text-align: center;
+    color: #FFF;
+    height: 300px;
+}
+#PreReg_head {
+    font-size: 60px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+#PreReg_body {
+    font-size: 20px;
+}
+button {
+  --c:  #6B1085; /* the color*/
+  
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+
+  font-family: Curier, monospace;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  padding: .1em .6em;
+  font-weight: bold;  
+  border: none;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+#programs_showcase {
+    margin-top: 100px;
+    font-size: 40px;
+    background-color: #6B1085;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 98.7%;
+    height: 2.5rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
